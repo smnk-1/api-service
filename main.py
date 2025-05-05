@@ -1,4 +1,3 @@
-from fastapi import FastAPI, HTTPException
 from fastapi import FastAPI, HTTPException, Depends
 from config import DATABASE_BACKEND
 from schemas import UserCreate, UserRead
