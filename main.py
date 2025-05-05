@@ -6,9 +6,9 @@ import models
 app = FastAPI()
 
 if DATABASE_BACKEND == "postgres":
-    from database import SessionLocal
+    from database import SessionLocal, engine
     import crud_postgres
-    models.Base.metadata.create_all(bind=SessionLocal.kw["bind"])
+    models.Base.metadata.create_all(bind=engine)
     crud = crud_postgres
 elif DATABASE_BACKEND == "redis":
     from database import redis_client
