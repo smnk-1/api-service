@@ -11,7 +11,7 @@ if DATABASE_BACKEND == "postgres":
     import crud_postgres
     models.Base.metadata.create_all(bind=SessionLocal.kw["bind"])
     crud = crud_postgres
-elif DATABASE_BACKEND == 'redis':
+elif DATABASE_BACKEND == "redis":
     from database import redis_client
     import crud_redis
     crud = crud_redis
@@ -63,4 +63,4 @@ if __name__ == "__main__":
     import uvicorn
     print("running")
     uvicorn.run(app, host="0.0.0.0", port=8000)
-    print('end')
+    print("end")
